@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       image-uri: ${{ steps.output-uri.outputs.image-uri }}
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -74,7 +74,7 @@ jobs:
             ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      
+
       - name: Output Image URI
         id: output-uri
         run: |
